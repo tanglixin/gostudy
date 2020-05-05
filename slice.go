@@ -37,4 +37,21 @@ func main(){
 	a6[1] = 1000
 	a7 := a6[0:]
 	fmt.Println(a7,len(a7),cap(a7))
+
+
+	var numbers []int
+	//追加空切片
+	numbers = append(numbers,0) //[0]
+	//向切片添加一个元素
+	numbers = append(numbers, 1)//[0 1]
+	//同时添加多个元素
+	numbers = append(numbers, 2,3,4)//[0 1 2 3 4]
+	fmt.Println(numbers)
+
+	//创建切片 numbers1 是之前切片的两倍容量
+	numbers1 := make([]int, len(numbers), (cap(numbers))*2)
+	//拷贝 numbers 的内容到 numbers1
+	copy(numbers1,numbers)
+	fmt.Println(numbers1)
+
 }
